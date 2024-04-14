@@ -1,5 +1,6 @@
 
 export type IArticle = {
+    _id:string;
     title: string;
     author?: string;
     video?: string;

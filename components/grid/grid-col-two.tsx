@@ -6,8 +6,8 @@ import { PopuparArticlesCarousel } from "../carousel/popular-articles-carousel"
 
 type Props = {
     articles: IArticle[]
-    allCleanTags: { name: string; color: string; }[]
-    mostViewdArticles:IArticle[]
+    allCleanTags?: { name: string; color: string; }[]
+    mostViewdArticles?:IArticle[]
 }
 
 export const GridColTwo = ({mostViewdArticles, articles, allCleanTags = [] }: Props) => {
@@ -24,7 +24,7 @@ export const GridColTwo = ({mostViewdArticles, articles, allCleanTags = [] }: Pr
                             <h2>
                                 Latest articles
                             </h2>
-                            <span className="jl_hsubt text-gray-400 ">Trending Topics: What's Buzzing in Pop Culture Right Now</span>
+                            <span className="jl_hsubt text-gray-400 ">Trending Topics: What&apos;s Buzzing in Pop Culture Right Now</span>
                         </div>
                         <div className="jl_grid_bellow_mian md:container">
                             <div id="content_masonry" className="  md:grid grid-cols-2 gap-4">

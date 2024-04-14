@@ -28,8 +28,8 @@ export const Pagination = ({ page, root_url, total_page }: Props) => {
                                 </i>
                             </Link>
                         </li>}
-                    {pageNumbers.map((pn,index) => ( <li>
-                        <Link key={index}  href={`${root_url + pn}`}>
+                    {pageNumbers.map((pn,index) => ( <li key={index}>
+                        <Link   href={`${root_url + pn}`}>
                             <span aria-current="page" className={`page-numbers ${ pn === page && "border bg-gray-500 border-black"} current`}>
                                 {pn}
                             </span>

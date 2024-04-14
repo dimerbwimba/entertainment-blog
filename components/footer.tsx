@@ -28,7 +28,7 @@ export const Footer = async () => {
                                     </div>
                                     <div className="jellywp_about_us_widget_wrapper">
                                         <p>
-                                        {process.env.SITE_NAME} had a humble start back in 2021 and in the years since has grown into one of the largest and most-respected entertainment news sources in the world - having served over 1+ billion readers in 2022. We don't just report news, we analyze and editorialize it with unique insight that engages everyone from casual entertainment lovers to hardcore movie buffs. 
+                                        {process.env.SITE_NAME} had a humble start back in 2021 and in the years since has grown into one of the largest and most-respected entertainment news sources in the world - having served over 1+ billion readers in 2022. We don&apos;t just report news, we analyze and editorialize it with unique insight that engages everyone from casual entertainment lovers to hardcore movie buffs. 
                                         </p>
                                         <div className="social_icons_widget">
                                             <ul className="social-icons-list-widget icons_about_widget_display">
@@ -48,7 +48,7 @@ export const Footer = async () => {
                                     </div>
                                     <div>
                                         <ul className="feature-post-list recent-post-widget">
-                                            {allThreeRecentArticles.result.map((article:IArticle, index:number) => (
+                                            {allThreeRecentArticles.result.map((article, index:number) => (
                                                 <li key={index}>
                                                     <a href="#" className="jl_small_format feature-image-link image_post featured-thumbnail" title="Round white dining table on brown hardwood">
                                                         <img width="120" height="120" src={article.image} className="attachment-disto_small_feature size-disto_small_feature wp-post-image" alt="" />
@@ -83,7 +83,7 @@ export const Footer = async () => {
                                     <h2>Categories</h2>
                                 </div>
                                 <ul>
-                                    {allCategoryAndArticlesNumber.result.map((article: { category: string, numberOfArticles: number }, index: number) => (
+                                    {allCategoryAndArticlesNumber.result.map((article, index: number) => (
                                         <li key={index} className={` hover:bg-gray-400 cat-item-${index + 1}`}>
                                             <a href={"/category/"+article.category} className=" uppercase" title="Sample category description goes here">
                                                 {article.category}</a>

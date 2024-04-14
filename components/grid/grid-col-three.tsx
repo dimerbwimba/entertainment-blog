@@ -16,11 +16,11 @@ export const GridColThree = () => {
                                 </div>
                                 <div className="jl_wrapper_row jl-post-block-248931">
                                     <div className="row">
-                                        {
+                                        {/* {
                                             [1,2,3,4,5,6].map(()=>(
                                                 <SmallWidthOverlayCard/>
                                             ))
-                                        }
+                                        } */}
                                     </div>
                                 </div>
                             </div>

@@ -27,7 +27,7 @@ const PageNumber = async ({params}:{params:{number:string, name:string}}) => {
                     <div className=" w-full ">
                         <div className=" flex justify-center">
                             <div className=" w-1/2">
-                                {listOfArticles.result.map((article: IArticle, index: number) => (
+                                {listOfArticles.result.map((article, index: number) => (
                                     <div key={index} className="jl_large_builder jelly_homepage_builder">
                                         <div className="box jl_grid_layout1 blog_large_post_style">
                                             <div className="jl_front_l_w">

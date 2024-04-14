@@ -5,7 +5,7 @@ import { useRef } from "react";
 import Slider from "react-slick";
 
 type Props={
-    articles:IArticle[]
+    articles:IArticle[] | undefined
 }
 
 export const PopuparArticlesCarousel = ({articles=[]}:Props) => {

@@ -9,15 +9,9 @@ import { ShareButton } from "./share-button"
 import { Hearder } from "./hearder"
 
 type Props = {
-    article: IArticle
-    nextArticle:{
-        slug:string,
-        title:string
-    }
-    prevArticle:{
-        slug:string,
-        title:string
-    }
+    article: any
+    nextArticle:any
+    prevArticle:any
 }
 
 export const SingeArticleView = ({ article , nextArticle, prevArticle }: Props) => {

@@ -43,7 +43,7 @@ const SearchPage = async ({ searchParams }: {
                 <div className="col-md-8" id="content">
                     <SearchArticleForm query={query} />
                     <div className="post_list_medium_widget jl_nonav_margin page_builder_listpost jelly_homepage_builder jl-post-block-725291">
-                        {articles.map((article: IArticle, index: number) =>
+                        {articles.map((article, index: number) =>
                             <div key={index} className="blog_list_post_style">
                                 <div className="image-post-thumb featured-thumbnail home_page_builder_thumbnial">
                                     <div className="jl_img_container">

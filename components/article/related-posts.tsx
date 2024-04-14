@@ -27,7 +27,7 @@ export const RelatedPosts = async ({ tag }: Props) => {
             <div className="single_related_post">
 
 
-                {data.relatedArticles.map((article: IArticle, index: number) => (
+                {data.relatedArticles.map((article, index: number) => (
                     <div key={index} className="jl_related_feature_items">
                         <div className="jl_related_feature_items_in">
                             <div className="image-post-thumb">
