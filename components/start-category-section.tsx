@@ -1,4 +1,4 @@
-import { getCategoryH } from "@/utils/other";
+import { getCategoryH, getTagDescription } from "@/utils/other";
 
 type Props = {
     categoryName:string;
@@ -18,10 +18,7 @@ export const StartCategorySection = ({categoryName}:Props) => {
                     <div className="row">
                         <div className="col-md-12 main_title_col">
                             <div className="jl_cat_mid_title">
-                                <h3 className="categories-title title">{categoryName}</h3>
-                                <p className=" text-xl">
-                                 {getCategoryH(categoryName)}
-                                </p>
+                                <h1 className="categories-title title">{categoryName}</h1>
                             </div>
                         </div>
                     </div>

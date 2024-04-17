@@ -1,13 +1,48 @@
 import { MainSectionWraper } from "@/components/main-section";
 import { Pagination } from "@/components/pagination";
 import { StartCategorySection } from "@/components/start-category-section";
+import {PersonTagView} from "@/components/tag/person-preview";
 import { getArticlesByTags } from "@/db/queries";
 import { IArticle } from "@/types/articles";
 import { dateFormater } from "@/utils/date";
+import { getTagDescription } from "@/utils/other";
+import type { Metadata, ResolvingMetadata } from 'next'
+
+type Props = {
+    params: { name: string }
+    searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export async function generateMetadata(
+    { params, searchParams }: Props,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    // read route params
+
+    return {
+        title: {
+            default: `Tag | ${params.name}  `,
+            template: "%s"
+        },
+        alternates: {
+            canonical: `https://www.${process.env.SITE_NAME}.com`
+        },
+        description: getTagDescription(params.name)?.description,
+        twitter: {
+            card: "summary_large_image"
+        },
+        openGraph: {
+            url: `https://www.${process.env.SITE_NAME}/category/${params.name}.com`
+
+        }
+    }
+}
+
+
 
 const TagPage = async ({ params }: { params: { name: string } }) => {
     const totalArticlePerPage = 10
-    const allArticlesBaseOfTag = getArticlesByTags(params.name, totalArticlePerPage,1)
+    const allArticlesBaseOfTag = getArticlesByTags(params.name, totalArticlePerPage, 1)
 
     const [
         listOfArticles
@@ -17,7 +52,7 @@ const TagPage = async ({ params }: { params: { name: string } }) => {
         ]
     )
     const totalPage = Math.ceil(listOfArticles.articlesCount / totalArticlePerPage)
-
+    const tagInfo = getTagDescription(params.name)
     return (
         <div>
             <StartCategorySection categoryName={params.name} />
@@ -26,6 +61,31 @@ const TagPage = async ({ params }: { params: { name: string } }) => {
                     <div className=" w-full ">
                         <div className=" flex justify-center">
                             <div className=" w-1/2">
+                                <div className="heading02">
+                                    <div className=" font-black">
+
+                                        {
+                                            tagInfo?.isAPerson  && <PersonTagView person={Object.entries(tagInfo)}/>
+                                        }
+
+                                        {
+                                            tagInfo?.isDescription &&  tagInfo?.description
+                                        }
+
+                                        {
+                                            tagInfo?.isATvShow && <PersonTagView person={Object.entries(tagInfo)}/>
+                                        }
+
+                                    </div>
+                                    <div style={styles}>
+                                        <div className="heading_star block-bdr brd_color">
+                                            <span className="theme_color2">
+                                                <i className="fa fa-star"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
                                 {listOfArticles.result.map((article, index: number) => (
                                     <div key={index} className="jl_large_builder jelly_homepage_builder">
                                         <div className="box jl_grid_layout1 blog_large_post_style">
@@ -88,6 +148,13 @@ const TagPage = async ({ params }: { params: { name: string } }) => {
             </MainSectionWraper>
         </div>
     );
+}
+
+const styles = {
+    display: "flex",
+    justifyContent: "center",
+    paddingTop: "10px",
+    paddingBottom: "10px;"
 }
 
 export default TagPage;

@@ -27866,3 +27866,88 @@ p.has-drop-cap:not(:focus):first-letter {
   max-width: 100% !important;
   width: 100% !important;
 }
+
+
+/*heading02 start*/
+
+.heading02{
+	float: left;
+	width: 100%;
+	padding-top: 4px;
+	margin-bottom: 48px;
+}
+.custom_size{
+	font-size: 45px;
+	line-height: 45px;
+}
+.custom_size span{
+	  display: block;
+	  padding:10px 0px;
+}
+.section_heading{
+	float: left;
+	width: 100%
+}
+.section_heading > span{
+	margin-bottom: 1px;
+	font-weight: 500;
+	position: relative;
+	display: inline-block;
+}
+.section_heading h2{
+	margin-bottom: 14px;
+}
+.heading_star{
+	display: inline-block;
+	position: relative;
+}
+.heading_star span:after,
+.heading_star span:before,
+.heading_star:after,
+.heading_star:before{
+	position: absolute;
+	content: "";
+	top:0px;
+	left: 0px;
+	right: 32px;
+	bottom: 11px;
+	border-bottom: 1px solid #fff;
+	width: 56px;
+}
+.heading_star span:before,
+.heading_star:before{
+	left: auto;
+}
+.heading_star span:after,
+.heading_star:after{
+	right: auto;
+	left: 32px;
+}
+.heading_star span:after,
+.heading_star span:before{
+	bottom: 7px;
+	width: 34px;
+}
+.heading_star span{
+	display: inline-block;
+}
+.text_center{
+	text-align: center;
+}
+.heading_star span:before,
+.heading_left .heading_star:before{
+	border-bottom: none;
+}
+.section_heading > p{
+	margin-bottom: 0px;
+}
+.brd_color span:before,
+.brd_color:before,
+.brd_color span:after,
+.brd_color:after{
+	border-color:#0d3264;
+}
+.block-bdr span:before{
+	border-bottom: 1px solid;
+}
+/*section heading end*/

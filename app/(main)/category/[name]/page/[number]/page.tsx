@@ -5,6 +5,38 @@ import { WithId, Document } from 'mongodb';
 import { IArticle } from "@/types/articles";
 import mapDocumentToArticle from '@/utils/mapDocumentToArticle'; // Adjust the path as necessary
 import { GridColTwo } from "@/components/grid/grid-col-two";
+import type { Metadata, ResolvingMetadata } from 'next'
+
+type Props = {
+    params: { name: string , number:number }
+    searchParams: { [key: string]: string | string[] | undefined }
+  }
+
+export async function generateMetadata(
+    { params, searchParams }: Props,
+    parent: ResolvingMetadata
+  ): Promise<Metadata> {
+    // read route params
+ 
+    return {
+       title: {
+          default: `Page ${params.number} | Category | ${params.name} `,
+          template: "%s"
+        },
+        alternates:{
+          canonical:`https://www.${process.env.SITE_NAME}/category/${params.name}/page/${params.number}.com`
+        },
+        description:   `Page ${params.number}| Stay up-to-date with the latest ${params.name} news at your fingertips.Your one-stop destination for everything ${params.name}!`,
+        twitter: {
+          card: "summary_large_image"
+        },
+        openGraph:{
+            url:`https://www.${process.env.SITE_NAME}/category/${params.name}/page/${params.number}.com`
+          
+        }
+    }
+  }
+
 
 const CategoryPageNumber = async ({params}:{params:{name:string,number:string}}) => {
     let page = parseInt(params.number, 10)
