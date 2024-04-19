@@ -18,13 +18,13 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Talk Palace",
+    default: "Eplore Wise Tips",
     template: "%s"
   },
   alternates: {
     canonical: `https://www.${process.env.SITE_NAME}.com`
   },
-  description: "Discover a world of engaging conversations at TalkPalace. Join a diverse community discussing topics ranging from entertainment to Lifestyle. Your voice matters at TalkPalace!",
+  description: "Discover a world of engaging conversations at Explore Wise Tips. Join a diverse community discussing topics ranging from entertainment to Lifestyle. Your voice matters at TalkPalace!",
   twitter: {
     card: "summary_large_image",
     images: [
