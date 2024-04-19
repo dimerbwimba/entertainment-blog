@@ -2,6 +2,19 @@
 import { cache } from "react"
 import clientPromise from "./mongo"
 
+export const getSitemapData = cache(async()=>{
+    const client = await clientPromise;
+    const db = client.db("blog");
+    const articles = await db.collection("articles")
+    .find()
+    .sort({createdAt:-1})
+    .project({slug:1, createdAt:1, updatedAt:1})
+    .toArray()
+
+    return articles
+
+
+})
 
 
 export const getSearchedArticles = cache(async (s: string) => {

@@ -26,14 +26,25 @@ export async function generateMetadata(
          default: `Category | ${params.name}  `,
          template: "%s"
        },
+       
        alternates:{
-         canonical:`https://www.${process.env.SITE_NAME}.com`
+         canonical:`https://www.${process.env.SITE_NAME}.com/category/${params.name}`
        },
        description: "Stay up-to-date with the latest reality TV news at your fingertips. Dive into in-depth reports, recaps, reviews, and episode summaries of the biggest reality television shows. Your one-stop destination for everything reality TV!",
        twitter: {
-         card: "summary_large_image"
+         card: "summary_large_image",
+         images:[
+            {
+                url:"https://i.ibb.co/nR9PN2s/TALK-PALACE.png"
+            }
+        ]
        },
        openGraph:{
+         images:[
+            {
+               url:"https://i.ibb.co/nR9PN2s/TALK-PALACE.png"
+            }
+         ],
          url:`https://www.${process.env.SITE_NAME}/category/${params.name}.com`
          
        }

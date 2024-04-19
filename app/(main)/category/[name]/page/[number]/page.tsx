@@ -24,14 +24,24 @@ export async function generateMetadata(
           template: "%s"
         },
         alternates:{
-          canonical:`https://www.${process.env.SITE_NAME}/category/${params.name}/page/${params.number}.com`
+          canonical:`${process.env.NEXT_PUBLIC_BASE_URL}/category/${params.name}/page/${params.number}`
         },
         description:   `Page ${params.number}| Stay up-to-date with the latest ${params.name} news at your fingertips.Your one-stop destination for everything ${params.name}!`,
         twitter: {
-          card: "summary_large_image"
+          card: "summary_large_image",
+          images:[
+            {
+                url:"https://i.ibb.co/nR9PN2s/TALK-PALACE.png"
+            }
+        ]
         },
         openGraph:{
-            url:`https://www.${process.env.SITE_NAME}/category/${params.name}/page/${params.number}.com`
+            url:`${process.env.NEXT_PUBLIC_BASE_URL}/category/${params.name}/page/${params.number}`,
+            images:[
+              {
+                  url:"https://i.ibb.co/nR9PN2s/TALK-PALACE.png"
+              }
+          ]
           
         }
     }

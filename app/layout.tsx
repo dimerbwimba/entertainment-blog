@@ -21,16 +21,26 @@ export const metadata: Metadata = {
     default: "Talk Palace",
     template: "%s"
   },
-  alternates:{
-    canonical:`https://www.${process.env.SITE_NAME}.com`
+  alternates: {
+    canonical: `https://www.${process.env.SITE_NAME}.com`
   },
   description: "Discover a world of engaging conversations at TalkPalace. Join a diverse community discussing topics ranging from entertainment to Lifestyle. Your voice matters at TalkPalace!",
   twitter: {
-    card: "summary_large_image"
+    card: "summary_large_image",
+    images: [
+      {
+        url: "https://i.ibb.co/nR9PN2s/TALK-PALACE.png"
+      }
+    ]
   },
-  openGraph:{
-    url:`https://www.${process.env.SITE_NAME}.com`
-    
+  openGraph: {
+    images: [
+      {
+        url: "https://i.ibb.co/nR9PN2s/TALK-PALACE.png"
+      }
+    ],
+    url: `https://www.${process.env.SITE_NAME}.com`
+
   }
 
 };
@@ -45,18 +55,18 @@ export default function RootLayout({
       <body className="mobile_nav_class jl-has-sidebar">
         <div className="options_layout_wrapper jl_radius jl_none_box_styles jl_border_radiuss">
           <StartHearderWrapper>
-           <SmallHearder/>
-           <div className="jl_blank_nav"></div>
-           <MainHearder/>
+            <SmallHearder />
+            <div className="jl_blank_nav"></div>
+            <MainHearder />
           </StartHearderWrapper>
           <MobileNavWrapper>
-            <MobileNav/>
+            <MobileNav />
           </MobileNavWrapper>
-          <SearchForm/>
-         <MobileMenuOverlay/>
+          <SearchForm />
+          <MobileMenuOverlay />
           {children}
-          <BottomNav/>
-          <Footer/>
+          <BottomNav />
+          <Footer />
         </div>
       </body>
     </html>

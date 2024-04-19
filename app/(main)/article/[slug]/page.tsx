@@ -28,10 +28,10 @@ export async function generateMetadata({ params }: SingleBlogPageProps): Promise
             }
         ],
         alternates:{
-            canonical:`${process.env.NEXT_PUBLIC_BASE_URL}/${params.slug}`
+            canonical:`${process.env.NEXT_PUBLIC_BASE_URL}/article/${params.slug}`
         },
         title: article.result?.title,
-        description: article.result?.title,
+        description: article.result?.description,
         twitter:{
             card:"summary_large_image",
             creator:"@dimer191996",

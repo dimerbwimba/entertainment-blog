@@ -25,13 +25,23 @@ export async function generateMetadata(
             template: "%s"
         },
         alternates: {
-            canonical: `https://www.${process.env.SITE_NAME}.com`
+            canonical: `https://www.${process.env.SITE_NAME}.com/tag/${params.name}`
         },
         description: getTagDescription(params.name)?.description,
         twitter: {
+            images:[
+                {
+                    url:"https://i.ibb.co/nR9PN2s/TALK-PALACE.png"
+                }
+            ],
             card: "summary_large_image"
         },
         openGraph: {
+            images:[
+                {
+                    url:"https://i.ibb.co/nR9PN2s/TALK-PALACE.png"
+                }
+            ],
             url: `https://www.${process.env.SITE_NAME}/category/${params.name}.com`
 
         }

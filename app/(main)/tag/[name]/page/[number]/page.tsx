@@ -3,6 +3,51 @@ import { Pagination } from "@/components/pagination"
 import { StartCategorySection } from "@/components/start-category-section"
 import { getArticlesByTags } from "@/db/queries"
 import { IArticle } from "@/types/articles"
+import { getTagDescription } from "@/utils/other"
+import { Metadata, ResolvingMetadata } from "next"
+
+
+type Props = {
+    params: { name: string , number:number }
+    searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export async function generateMetadata(
+    { params, searchParams }: Props,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    // read route params
+
+    return {
+        title: {
+            default: `Tag | ${params.name}  `,
+            template: "%s"
+        },
+        alternates: {
+            canonical: `https://www.${process.env.SITE_NAME}.com/tag/${params.name}/page/${params.number}`
+        },
+        description: getTagDescription(params.name)?.description,
+        twitter: {
+            images:[
+                {
+                    url:"https://i.ibb.co/nR9PN2s/TALK-PALACE.png"
+                }
+            ],
+            card: "summary_large_image"
+        },
+        openGraph: {
+            images:[
+                {
+                    url:"https://i.ibb.co/nR9PN2s/TALK-PALACE.png"
+                }
+            ],
+            url: `https://www.${process.env.SITE_NAME}/category/${params.name}.com`
+
+        }
+    }
+}
+
+
 
 const PageNumber = async ({params}:{params:{number:string, name:string}}) => {
     let page = parseInt(params.number, 10)
