@@ -27,7 +27,7 @@ const EthicsPolicy = () => {
                         <h2>Spoiler Policy</h2>
                         <ul>
                             <li>We respect embargoes and do not include spoilers in previews or reviews without permission. When spoilers are included, we avoid revealing them in headlines or images, ensuring readers can choose whether to engage with such content.</li>
-                            <li>To protect our readers' experience, we always include a spoiler warning at the beginning of articles containing spoilers, particularly during the release window of a piece of entertainment.</li>
+                            <li>To protect our readers&apos; experience, we always include a spoiler warning at the beginning of articles containing spoilers, particularly during the release window of a piece of entertainment.</li>
                         </ul>
 
                         <h2>For Corrections or Updates</h2>
