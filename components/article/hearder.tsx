@@ -1,4 +1,5 @@
 import { IArticle } from "@/types/articles"
+import { dateFormater } from "@/utils/date"
 
 type Props = {
     article:IArticle
@@ -25,7 +26,7 @@ export const Hearder = ({article}:Props) =>{
                                     </span>
                                 </span>
                                 <span className="post-date updated">
-                                    <i className="fa fa-clock-o"></i>Dec 23, 2016
+                                    <i className="fa fa-clock-o"></i> {dateFormater(article.createdAt)}
                                 </span>
 
                                 <span className="view_options">
