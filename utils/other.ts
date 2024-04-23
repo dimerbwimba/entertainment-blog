@@ -11,8 +11,9 @@ export function getCategoryH(category: string | undefined) {
             return "Explore a comprehensive collection of movie reviews and ratings from the esteemed film critics and industry experts at Explore Wise Tips. With over 15 years of experience, they provide valuable insights and guidance to help movie lovers make informed decisions about which films to watch. Trust their expertise to enhance your movie-watching experience."
         case category = "short":
             return "Explore a world of imagination with our captivating short stories collection. From thrilling adventures to poignant tales, discover the essence of storytelling in bite-sized narratives that leave a lasting impact."
-        
-            default:
+        case category = "travel":
+            return "Explore our exciting travel destinations! Discover amazing adventures, stunning landscapes, and unforgettable experiences. Start planning your next journey today!"
+        default:
             break;
     }
 

@@ -8,6 +8,7 @@ import { WithId, Document } from 'mongodb';
 import { IArticle } from '@/types/articles'; // Assuming IArticle is defined in types.ts or a similar file
 import mapDocumentToArticle from '@/utils/mapDocumentToArticle'; // Adjust the path as necessary
 import type { Metadata, ResolvingMetadata } from 'next'
+import { getCategoryH } from "@/utils/other";
 
 
 type Props = {
@@ -30,7 +31,7 @@ export async function generateMetadata(
        alternates:{
          canonical:`https://www.${process.env.SITE_NAME}.com/category/${params.name}`
        },
-       description: "Stay up-to-date with the latest reality TV news at your fingertips. Dive into in-depth reports, recaps, reviews, and episode summaries of the biggest reality television shows. Your one-stop destination for everything reality TV!",
+       description: getCategoryH(params.name),
        twitter: {
          card: "summary_large_image",
          images:[
