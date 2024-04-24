@@ -52,6 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta name="msvalidate.01" content="F6D1B0B61E3D18A5F18DED0BEE9157F9" />
       <body className="mobile_nav_class jl-has-sidebar">
         <div className="options_layout_wrapper jl_radius jl_none_box_styles jl_border_radiuss">
           <StartHearderWrapper>
